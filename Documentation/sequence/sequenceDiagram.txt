@@ -1,0 +1,11 @@
+title P_Script Sequence diagram
+User->App: Request the datas
+App->target PC:PING
+target PC-->App:PONG
+alt PC responded
+	App->target PC:Send data requests
+	target PC --> App:Answer
+	App-->User: Show datas
+else PC didn't responded
+	App-->User :Output an error
+end
