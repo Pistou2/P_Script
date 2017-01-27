@@ -1,10 +1,17 @@
 ﻿
 #Connection to the computer
-<#TODO#>$password = read-host -assecurestring 
-$username = "W10-1\merkya"
-$cred = new-object -typename System.Management.Automation.PSCredential -argumentlist $username, $password
+<#USERNAME#>$username = "merkya"
+<#PASSWORD#>$password = read-host -assecurestring 
+<#TARGET IP#>$targetIp = "127.0.0.1"
+<#COMMAND#>$command = '$env:COMPUTERNAME'
 
-#Get the computer Name
-$targetComputerName = Invoke-Command -ComputerName 127.0.0.1 -ScriptBlock{$env:COMPUTERNAME} -Credential $cred
+#Load the functions
+$workingdir = Split-Path $MyInvocation.MyCommand.Path -Parent
+. "$workingdir\functions.ps1"
 
-echo $targetComputerName
+#Initialize the session
+$session = (createSession  -computerIp $targetIp -username $username -password $password)
+
+#send the command
+echo (sendCommand -command $command -session $session)
+   
