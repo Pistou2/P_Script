@@ -1,0 +1,48 @@
+=============================
+Acces VM Linux
+=============================
+
+Sources :
+https://forum.ubuntu-fr.org/viewtopic.php?id=376862
+
+Connaitre ip de la VM
+-----------------------------
+
+	1) terminal > ifconfig
+	2) L'ip de trouve dans la carte réseau 2ème ligne (inet adr:$IP)
+		Exemple : 192.168.56.101
+
+		
+Ping une machine virtuelle
+-----------------------------
+
+	1) Paramètre réseau de la VM > Mode d'accès réseau > Accès privé hôte
+	2) CMD > ping 192.168.56.101
+	
+
+Congfiguration SSH
+-----------------------------
+
+	VM :
+	1) Installer openssh-server
+		terminal > sudo apt-get install openssh-server
+	2) Reboot
+		terminal > reboot
+		
+	Hôte :
+	1) Télécharger Putty.exe
+		http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
+	2) Ouvrer putty.exe
+	3) Category Session > Host Name (or IP address) : 192.168.56.101
+	4) 					  Port : 22
+	4)					  Connection type : SSH
+	5) Entrer votre utilisateur de la VM puis mot de passe
+		Exemple :
+			login as: eleve
+			eleve@192.168.56.101's password: .Etml-44		(Le mot de passe est pas afficher)
+
+
+
+	
+
+
