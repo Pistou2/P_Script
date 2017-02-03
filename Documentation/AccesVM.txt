@@ -1,0 +1,5 @@
+Ping une machine virtuelle
+=============================
+
+Paramètre réseau de la VM > Mode d'accèrs réseau > Accès privé hôte
+CMD > ping 192.168.101
