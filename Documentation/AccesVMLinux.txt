@@ -15,14 +15,14 @@ Connaitre ip de la VM
 		Exemple : 192.168.56.101
 
 		
-Ping une machine virtuelle
+Carte réseau
 -----------------------------
 
 	1) Paramètre réseau de la VM > Mode d'accès réseau > Réseau privé hôte
-	2) CMD > ping 192.168.56.101
+	2) Test : CMD > ping 192.168.56.101
 	
 
-Congfiguration SSH
+Configuration SSH
 -----------------------------
 
 	VM :
