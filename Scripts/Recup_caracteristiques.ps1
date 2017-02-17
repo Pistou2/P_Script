@@ -18,26 +18,3 @@ $commandResult = sendCommand -Command $command <#Script to execute, as a string#
 
 #Simply display the output
 $commandResult | Format-Table
-
-<#=========================
-       Command List 
-===========================
-
-Here's a list of command that can be used to get all the required computer specs.   Those needs of course to be integrated into the interface
-
-Computer Name :
-$env:COMPUTERNAME
-
-Ram :
-Get-WmiObject -Class Win32_OperatingSystem -Property TotalVisibleMemorySize, FreePhysicalMemory
-
-GPU :
-Get-WmiObject -Class Win32_VideoController
-
-CPU : 
-Get-WmiObject -Class Win32_Processor
-
-Windows version : 
-Get-WmiObject -Class Win32_OperatingSystem -Property Description, Caption, OSArchitecture, ServicePackMajorVersion, BuildNumber, Version
-
-#>
