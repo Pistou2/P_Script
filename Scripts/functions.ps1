@@ -1,11 +1,13 @@
 #Create a session to the inputed computer
 function createSession($computerIp, $username, $password)
 {
+    #Create a credential, to connect to the computer
     $cred = new-object -typename System.Management.Automation.PSCredential -argumentlist {$username, $password}
 
     #Open a session
     $session = New-PSSession -ComputerName $computerIp -Credential $cred
 
+    #return it
     return $session   
 }
 

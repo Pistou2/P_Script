@@ -22,6 +22,9 @@ $commandResult | Format-Table
 <#=========================
        Command List 
 ===========================
+
+Here's a list of command that can be used to get all the required computer specs.   Those needs of course to be integrated into the interface
+
 Computer Name :
 $env:COMPUTERNAME
 
