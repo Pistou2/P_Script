@@ -1,13 +1,15 @@
 • Visualiser la taille du ou des disques du PC (avec le taux d'utilisation et
 l'espace restant).
-///////////////////////////////////////TODO
+df -h
+//affiche l'utilisation et le total, il faut encore calculé le taux... Et ça fait que le /
+///////////////////////////////////////TODO autre disque
 
 • Récupérer le nom du PC
 $hostname = (Invoke-SSHCommand -Index 0 -Command "hostname").output
 (type = string[])
 
 • Récupérer la liste des utilisateurs locaux
-$users = (Invoke-SSHCommand -Index 0 -Command "ls /home").output)
+$users = (Invoke-SSHCommand -Index 0 -Command "grep bash /etc/passwd | cut -f1 -d:").output)
 (type = string[])
 
 • Récupérer la liste des groupes locaux
@@ -16,10 +18,9 @@ $groups = (Invoke-SSHCommand -Index 0 -Command "cat /etc/group | awk -F: '{print
 
 • Lister la liste des services avec leur statut
 o Depuis cette liste, filtrer selon le statut
-///////////////////////////////////////TODO
+$servicesRunning = (Invoke-SSHCommand -Index 0 -Command "initctl list | egrep -v " stop/waiting|^tty" ; service --status-all 2>&1 | egrep -v "\[ (\?|\-) \]"").output
 
 
 • Afficher les caractéristiques du PC (Ram, carte graphique, etc.)
- $lshw = (Invoke-SSHCommand -Index 0 -Command "lshw").output
- ///////////////////////////////////////TODO : chercher les informations voulue dans ce tableau
+ $lshw = (Invoke-SSHCommand -Index 0 -Command "sudo lshw").output
  
