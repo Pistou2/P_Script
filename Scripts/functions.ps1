@@ -54,3 +54,11 @@ function getOSInfos($session)
 {
 	return sendCommand('Get-WmiObject -Class Win32_OperatingSystem -Property Description, Caption, OSArchitecture, ServicePackMajorVersion, BuildNumber, Version',$session)
 }
+
+#Get Disk informations
+#TODO
+#http://stackoverflow.com/a/14063729
+function getDiskInfos($session)
+{
+	return sendCommand('Get-WmiObject Win32_LogicalDisk -Filter "DeviceID='C:'" -Property Size,FreeSpace',$session)
+}
