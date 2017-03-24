@@ -64,19 +64,28 @@ function getDiskInfos($session)
 }
 
 #Si il vaut 1 on récupère les services qui fonctionne
-#Si il vaut 2 on récupère les services arréter
+#Si il vaut 2 on récupère les services arrêtés
 #Si il vaut une autre valeur on récupère tout les services
 #Retourne un tableau des services
-function getService([int]$status = 0){
-
-switch ($status) 
+function getService([int]$status = 0)
+{
+	switch ($status)
     { 
-        1 {$service = Get-Service | Where-Object {$_.Status -eq "Running"}
-           return $service } 
-        2 {$service = Get-Service | Where-Object {$_.Status -eq "Stopped"}
-           return $service }
-        default {$service = Get-Service
-           return $service }
+        1 
+		{
+			$service = Get-Service | Where-Object {$_.Status -eq "Running"}
+			return $service 
+		} 
+        2 
+		{
+			$service = Get-Service | Where-Object {$_.Status -eq "Stopped"}
+			return $service 
+		}
+        default
+		{
+			$service = Get-Service
+			return $service
+		}
     }
 }
 
@@ -89,6 +98,6 @@ function getUser{
 
 #Retourne un tableau des users
 function getGroup{
-$group =Get-LocalGroup 
-return $group
+	$group =Get-LocalGroup 
+	return $group
 }
