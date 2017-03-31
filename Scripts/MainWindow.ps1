@@ -7,6 +7,8 @@ function showMainWindow{
 
     $xaml = Get-Content -Path $CallPath\MainWindow.xaml
 
+    Write $xaml
+
     $Window = [Windows.Markup.XamlReader]::Parse($xaml)
 
     $btnDisconnect = $Window.FindName("btnDisconnect")

@@ -4,43 +4,43 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0*"/>
-            <ColumnDefinition Width="50*"/>
-            <ColumnDefinition Width="5*"/>
-            <ColumnDefinition Width="5*"/>
-            <ColumnDefinition Width="50*"/>
-        </Grid.ColumnDefinitions>
-        <DataGrid x:Name="dataGrid" Grid.Row="1" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5">
-            <DataGrid.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </DataGrid.RenderTransform>
-            <DataGrid.Columns>
-                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Nom d'utilisateur" CanUserReorder="False" SortDirection="Ascending" Width="10*"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <Label x:Name="label" Content="Utilisateurs" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2"/>
-        <DataGrid x:Name="dataGrid1" Grid.Column="4" Grid.Row="1" RenderTransformOrigin="0.5,0.5">
-            <DataGrid.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </DataGrid.RenderTransform>
-            <DataGrid.Columns>
-                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Nom de groupe" CanUserReorder="False" SortDirection="Ascending" Width="10*"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <Label x:Name="label_Copy" Content="Groupes" Margin="0" Grid.Column="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
-    </Grid>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="20"/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="0*"/>
+			<ColumnDefinition Width="50*"/>
+			<ColumnDefinition Width="5*"/>
+			<ColumnDefinition Width="5*"/>
+			<ColumnDefinition Width="50*"/>
+		</Grid.ColumnDefinitions>
+		<DataGrid x:Name="dataGridUser" Grid.Row="1" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5">
+			<DataGrid.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform/>
+					<SkewTransform/>
+					<TranslateTransform/>
+				</TransformGroup>
+			</DataGrid.RenderTransform>
+			<DataGrid.Columns>
+				<DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Nom d'utilisateur" CanUserReorder="False" SortDirection="Ascending" Width="10*"/>
+			</DataGrid.Columns>
+		</DataGrid>
+		<Label x:Name="lblUser" Content="Utilisateurs" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2"/>
+		<DataGrid x:Name="dataGridGroups" Grid.Column="4" Grid.Row="1" RenderTransformOrigin="0.5,0.5">
+			<DataGrid.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform/>
+					<SkewTransform/>
+					<TranslateTransform/>
+				</TransformGroup>
+			</DataGrid.RenderTransform>
+			<DataGrid.Columns>
+				<DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Nom de groupe" CanUserReorder="False" SortDirection="Ascending" Width="10*"/>
+			</DataGrid.Columns>
+		</DataGrid>
+		<Label x:Name="lblGroups" Content="Groupes" Margin="0" Grid.Column="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
+	</Grid>
 </Page>

@@ -14,7 +14,7 @@
     $btnConnect.Add_Click({
         $Window.Close()
         . $CallPath\MainWindow.ps1
-        showMainWindow $CallPath "dalut"
+        showMainWindow $CallPath "Salut"
     })
 
     $Window.ShowDialog()
